@@ -42,10 +42,12 @@ public class Homework1 {
 	
 	private static void processOption2() {
 		PersonalInfo personalInfo = new PersonalInfo();
-		String name = personalInfo.askQuestion("What is your name?");
+		String question1 = "What is your name?";
+		String name = personalInfo.askQuestion(question1);
 		Integer age = 0;
-		String address = personalInfo.askQuestion("What is your address,"+name+"?");
-		System.out.println(name+", you live at "+ address);
+		String nextQuestion = personalInfo.concatenateString(personalInfo.concatenateString("What is your address, ",name),"?");
+		String address = personalInfo.askQuestion(nextQuestion);
+		System.out.println(personalInfo.concatenateString(personalInfo.concatenateString(name,", you live at "),address));
 		return;
 	}
 	
